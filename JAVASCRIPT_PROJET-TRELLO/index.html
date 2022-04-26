@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="stylebg.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/193159d4d1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRELLO</title>
+</head>
+
+<body>
+
+    <main id="main" class="main">
+        <div class="background-animation">
+            <img src="imagebg/Drive-Css-assets/assets/odc.png" alt="houseodc" srcset="" class="houseodc">
+            <div class="talibi"></div>
+            <div class="car">
+                <img src="imagebg/Drive-Css-assets/assets/carrapide.png" alt="" srcset="">
+            </div>
+            <!-- animation background -->
+        </div>
+        <div class="modal" id="modal">
+            <div class="modalContent">
+                <div class="modal__title">
+                    <h4>Nouvelle Tache</h4>
+                    <i id="btnCloseModal" class="fa-solid fa-xmark btnCloseModal"></i>
+                </div>
+
+                <form name="submitModal" id="form" method="post">
+                    <h4>Remplir les informations de la nouvelle tâche</h4>
+                    <div id="divTache" class="divFormInput">
+                        <label for="tache">Tache</label>
+                        <textarea class="textarea" name="tache" id="tache" rows="7"></textarea>
+                        <span id="tacheSpan" class="errorSpan"></span>
+                    </div>
+
+                    <div id="divDate" class="divFormInput">
+                        <label for="date">date</label>
+                        <input type="date" name="date" id="date">
+                        <span id="dateSpan" class="errorSpan"></span>
+                    </div>
+
+                    <div id="divheureDebut" class="divFormInput">
+                        <label for="heure de debut">Date de debut </label>
+                        <input type="time" name="heureDebut" id="heureDebut">
+                        <span id="debutSpan" class="errorSpan"></span>
+                    </div>
+
+                    <div id="divheureFin" class="divFormInput">
+                        <label for="heure de debut">Date de Fin</label>
+                        <input type="time" name="heureFin" id="heureFin">
+                        <span id="finSpan" class="errorSpan"></span>
+                    </div>
+
+                    <input type="button" name="submit" id="submit" value="Ajouter">
+                </form>
+            </div>
+        </div>
+
+
+        <div id="topBarre" class="topBarre">
+            <button id="btnColonne"><i class="fa-solid fa-plus">&#32;Colonne</i></button>
+            <button id="btnTaches"><i class="fa-solid fa-plus">&#32;Note</i></button>
+        </div>
+        <!-- <div class="colonne" id="colonne">
+
+            <div class="colonne__title">
+                <h2 class="colonne__title--h2">Colonne1</h2>
+            </div>
+
+            <div class="colonne__taches">
+                <div id="left_button" class="left_button taches_button"> <i class="fa-solid fa-angles-left"></i>
+                </div>
+                <div class="taches">
+                    <span class="taches__span">ckbsdlzjenfzlen </span>
+                    <span class="taches__span">ckbsdlzjenfzlen </span>
+                    <span class="taches__span">ckbsdlzjenfzlen </span>
+                </div>
+                <div id="right_button" class="right_button taches_button"><i class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+        </div>  -->
+
+
+
+        <button id="btnOpen" class="btnOpen"><i class="fa-solid fa-gear"></i></button>
+        <button id="btnTrash" class="btnTrash"><i class="fa-solid fa-trash-can"> </i></button>
+
+        <div id="trash" class="trash">
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="background.js"></script>
+</body>
+
+</html>

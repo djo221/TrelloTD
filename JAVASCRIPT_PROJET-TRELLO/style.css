@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Rubik+Wet+Paint&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+}
+
+main {
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: flex-end;
+
+}
+
+.topBarre {
+    display: grid;
+    justify-content: flex-start;
+    background-color: #487eb0;
+    padding: 1em;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 22;
+    transform: translateY(-100%);
+    transition: all 1.5s;
+}
+
+.topBarre_toggle {
+    display: grid;
+    justify-content: flex-start;
+    background-color: #487eb0;
+    padding: 1em;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 22;
+    transform: translateY(0);
+}
+
+.topBarre button {
+    display: flex;
+    padding-left: 0.2rem;
+    margin: 0.3em;
+    padding: 0.5em;
+    background-color: transparent;
+    border-style: none;
+    border-left: solid 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.topBarre button:hover {
+    display: flex;
+    padding-left: 0.2rem;
+    margin: 0.3em;
+    padding: 0.5em;
+    background-color: transparent;
+    border-style: none;
+    border-left: solid 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0097e6;
+
+}
+
+.btnOpen {
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+    transform: scale(4);
+    background-color: transparent;
+    border-style: none;
+    color: #192a56;
+    cursor: pointer;
+}
+
+.btnOpen:hover {
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+    transform: scale(4);
+    background-color: transparent;
+    border-style: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+.colonne {
+    position: relative;
+    margin: 1em;
+    height: 80%;
+    margin-bottom: 4.5em;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 2px 5px 23px;
+    opacity: 90%;
+/*     animation: pulse 4s infinite; */
+
+
+
+    -webkit-animation-name: zoomInDown;
+    animation-name: zoomInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.colonne__title {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.2em;
+    color: #000;
+    margin: 0.1rem;
+}
+
+.colonne__taches {
+    position: relative;
+    margin-top: 1em;
+    width: 100%;
+    height: auto;
+    padding: 2.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.taches {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2em;
+    font-family: 'Frijole', cursive;
+    word-wrap: break-word;
+    /* permer d'aller à la ligne */
+}
+
+.colonne__taches:hover .taches {
+    position: relative;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 120%;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2em;
+    font-family: 'Frijole', cursive;
+    visibility: hidden;
+}
+
+.taches span {
+    font-size: 1.5em;
+}
+
+.tachesTime {
+    display: grid;
+    font-size: 5.6em;
+    font-weight: 900;
+    position: absolute;
+    width: 87%;
+    height: 100%;
+    font-family: 'Rubik Wet Paint', cursive;
+    color: black;
+    transform: translateY(100%);
+}
+
+.colonne__taches:hover .tachesTime {
+    display: grid;
+    font-size: 2.4em;
+    font-weight: 900;
+    position: absolute;
+    width: 87%;
+    height: 100%;
+    font-family: 'Rubik Wet Paint', cursive;
+    color: black;
+    transform: translateY(0%);
+}
+
+#premierColonne .left_button {
+    display: none;
+}
+#dernierColonne .right_button {
+    display: none;
+}
+
+
+.taches_button {
+    background-color: transparent;
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 900;
+    position: relative;
+    padding: 0 0.2em;
+}
+
+.taches_button:hover {
+    background-color: transparent;
+    font-size: 1.5em;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.left_button {
+    position: absolute;
+    z-index: 22;
+    align-self: center;
+    left: 0;
+    margin-left: 0.2em;
+}
+
+.left_button:hover {
+    left: 0;
+    padding-right: 0.6em;
+}
+
+.right_button {
+    position: absolute;
+    right: 0;
+    align-self: center;
+    /*  margin-right: 0.4em; */
+}
+
+.right_button:hover {
+    position: absolute;
+    right: 0;
+    padding-left: 0.6em;
+}
+
+.archivation {
+    position: absolute;
+    transform: translateY(-150%);
+    right: 0.3em;
+    background-color: transparent;
+    border-style: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.modal {
+    /*    display: none; */
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    z-index: 1;
+    font-size: 1.5em;
+}
+
+.modalContent {
+    border-radius: 9px;
+    box-shadow: 1px 1px 40px rgba(192, 192, 192, 0.9);
+    position: relative;
+    background-color: #fff;
+    width: 20%;
+    margin: 8% auto;
+    padding: 10px;
+}
+
+.modalContent form {
+    position: relative;
+    top: 30px;
+    display: grid;
+    margin: 1em;
+}
+
+.modalContent form label {
+    color: #2d3436;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.modalContent form input[type=button] {
+    margin: 1rem 0.1rem;
+    background-color: #cc8e35;
+    padding: 0.5em;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.modal__title {
+    position: absolute;
+    width: 100%;
+    padding: 1em;
+    top: 0;
+    left: 0;
+    background-color: #44bd32;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    height: 60px;
+}
+
+ .textarea {
+    padding: 1rem;
+    font-size: 1em;
+    font-family: 'Rubik Wet Paint', cursive;
+} 
+
+.spanDecorSuccess{
+    padding: 1rem;
+    font-size: 1em;
+    font-family: 'Rubik Wet Paint', cursive;
+    border: solid 7px pink;
+
+}
+.spanDecorError {
+    font-family: 'Rubik Wet Paint', cursive;
+    padding: 1rem;
+    font-size: 1em;
+    border-style: dotted;
+    border: solid red;
+    background-image: url("https://c.tenor.com/ZSKUhLCJ6JEAAAAi/its-empty-nothing.gif");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: -50px;
+}
+
+.divFormInput {
+    display: grid;
+}
+
+.errorSpan {
+    height: 1em;
+    text-align: center;
+    color: red;
+}
+
+.btnCloseModal:hover {
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.corbeilleCol {
+    background-color: transparent;
+    border-style: none;
+    font-size: 2em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0.2rem;
+}
+
+.corbeilleCol:hover {
+    background-color: transparent;
+    border-style: none;
+    font-size: 2em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0.2rem;
+    cursor: pointer;
+    color: gold;
+    transform: scale(1.1);
+}
+
+.btnTrash {
+    position: fixed;
+    right: 0;
+    margin: 1.5rem;
+    background-color: transparent;
+    border-style: none;
+    transform: scale(3.1);
+}
+
+.btnTrash:hover {
+    position: fixed;
+    right: 0;
+    margin: 1.5rem;
+    background-color: transparent;
+    border-style: none;
+    transform: scale(3.2);
+    cursor: pointer;
+    color: gold;
+}
+
+.trash {
+    position: fixed;
+    right: 0;
+    bottom: 4.5em;
+
+    opacity: 80%;
+    width: 20vw;
+    height: 100vh;
+    z-index: 3333;
+    transform: translateX(100%);
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+}
+
+.trashToggle {
+    position: fixed;
+    right: 0;
+    bottom: 4.5em;
+    opacity: 80%;
+    width: 20vw;
+    height: 90%;
+    z-index: 3333;
+    transform: translateX(0);
+    overflow-y: scroll;
+}
+
+.error {
+    font-size: 0.7em;
+    color: red;
+    text-align: center;
+    margin: -0.2em;
+    padding: 0;
+
+    animation-name: error;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes error {
+    0% {
+        color: red;
+
+    }
+
+    50% {
+        font-size: 0.8em;
+        opacity: 40%;
+
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(237, 251, 251, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+  }
+
+
+  @keyframes zoomInDown {
+    0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    }
+    60% {
+    opacity: 1;
+    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+    }
+    }
+   
